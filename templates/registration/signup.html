@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Create account | Festove Eats{% endblock %}
+
+{% block content %}
+<section class="auth-page">
+    <div class="auth-card">
+        <h1>Create your account</h1>
+        <p>Create an account to place an order.</p>
+        <form method="post" class="auth-form">
+            {% csrf_token %}
+            {% for field in form %}
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+            {% if field.help_text %}<small>{{ field.help_text|safe }}</small>{% endif %}
+            {% for error in field.errors %}<span class="auth-error">{{ error }}</span>{% endfor %}
+            {% endfor %}
+            <button class="btn" type="submit">Create account</button>
+        </form>
+        <p class="auth-switch">Already registered? <a href="{% url 'login' %}">Sign in</a></p>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Reserve a table | Festove Eats{% endblock %}
+
+{% block content %}
+<section class="reservation-page">
+    <div class="reservation-card">
+        <h1>Reserve a table</h1>
+        <p class="reservation-intro">Choose your date, time, and party size. We’ll contact you to confirm your reservation.</p>
+
+        <form method="post" class="reservation-form">
+            {% csrf_token %}
+            {% if form.non_field_errors %}<div class="reservation-errors">{{ form.non_field_errors }}</div>{% endif %}
+            <div class="reservation-fields">
+                {% for field in form %}
+                <div class="reservation-field{% if field.name == 'special_requests' %} full-width{% endif %}">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.help_text %}<small>{{ field.help_text }}</small>{% endif %}
+                    {% for error in field.errors %}<span class="field-error">{{ error }}</span>{% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+            <button class="btn reservation-submit" type="submit">Request reservation</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

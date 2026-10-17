@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static%}
+{% block title%} About Us|about {% endblock%}
+
+{% block content %}
+
+<section id="about">
+    <div class="container">
+        <div class="about-copy">
+            <h1>About Us</h1>
+            <p>Festove Eats is a fast food restaurant that specializes in delicious, high-quality meals made with care. Our menu features a variety of options, including burgers, fries, pasta, and drinks. We are committed to providing our customers with a memorable dining experience, whether they are dining in or taking their food to go.</p>
+            <p>We believe in using the finest ingredients and preparing each dish with passion and dedication. Our team of skilled chefs is committed to delivering exceptional taste and quality in every bite.</p>
+            <p>At Festove Eats, we value our customers and strive to create a welcoming and enjoyable atmosphere. We are dedicated to providing excellent service and ensuring that every visit is a delightful experience.</p>
+            <p>Whether you're looking for a quick bite or a satisfying meal, Festove Eats is the perfect destination for food lovers. Join us and discover the joy of fast food made with care.</p>
+            <p>We look forward to serving you and making your dining experience at Festove Eats truly special. Thank you for choosing us as your go-to fast food restaurant!</p>
+        </div>
+        <img src="{% static 'images/bc.jpeg' %}" alt="Festove Eats restaurant interior" class="about-image">
+    </div>
+</section>
+
+
+{% endblock  %}

@@ -1,0 +1,401 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Isometra&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Isometra&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    overflow-x: auto;
+    padding: 0 24px;
+    color: #fff;
+    background: linear-gradient(45deg, #1a1a1a, #0d1117);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar nav{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 36px;
+    width: min(100%, 1200px);
+    min-height: 76px;
+    margin: 0 auto;
+}
+.nav-links{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 28px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+.nav-actions{
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 20px;
+}
+.navbar a{
+    color: #fff;
+    text-decoration: none;
+}
+.nav-links a,
+.nav-icon{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+}
+.nav-links a{
+    white-space: nowrap;
+    transition: color 160ms ease;
+}
+.nav-links a:hover,
+.nav-icon:hover{
+    color: #f4a340;
+}
+.nav-icon{
+    width: 40px;
+    font-size: 17px;
+}
+.testimonials{
+    padding: 64px 8%;
+    background-color: #f4f6f5;
+    color: #222831;
+}
+.testimonials h2{
+    font-family: "Edu NSW ACT Cursive", cursive;
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin-bottom: 28px;
+}
+.testimonial-grid{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+.testimonial-card{
+    padding: 24px;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #222831;
+    box-shadow: 0 8px 24px rgba(22, 34, 32, 0.14);
+}
+.testimonial-card h3{
+    margin-bottom: 4px;
+    font-size: 1.2rem;
+}
+.testimonial-card span{
+    color: #a65d13;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.testimonial-card p{
+    margin-top: 16px;
+    line-height: 1.6;
+}
+@media (max-width: 900px){
+    .testimonial-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 560px){
+    .testimonials{
+        padding: 48px 6%;
+    }
+    .testimonials h2{
+        font-size: 2rem;
+    }
+    .testimonial-grid{
+        grid-template-columns: 1fr;
+    }
+}
+.btn:hover{
+    background: #ffc16f;
+}
+.hy{
+    flex-shrink: 0;
+    font-family: "Edu NSW ACT Cursive", cursive;
+    font-size: 24px;
+    white-space: nowrap;
+}
+
+.btn{
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 24px;
+    background: #f4a340;
+    color: #121212;
+    font-weight: 600;
+    text-decoration: none;
+}
+.main{
+    align-items: flex-start;
+    justify-content: center;
+}
+.main-text{max-width: 560px;}
+.main p{margin: 10px 0; line-height: 1.7;}
+.main .btn{margin-top: 18px;}
+.page-content{
+    min-height: calc(100vh - 76px);
+    padding: 72px 8%;
+    background: #f4f6f5;
+    color: #222831;
+}
+.page-content h1{margin-bottom: 12px; font-size: clamp(2rem, 5vw, 3rem);}
+.page-intro{margin-bottom: 32px; color: #555; font-size: 1.15rem;}
+.menu-grid{display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px;}
+.menu-card,
+.booking-card{
+    padding: 24px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(22, 34, 32, 0.1);
+}
+
+@media (max-width: 980px){
+    .menu-image-grid{grid-template-columns: repeat(2, minmax(0, 1fr));}
+}
+@media (max-width: 560px){
+    .page-content{padding: 48px 6%;}
+    .menu-grid{grid-template-columns: 1fr;}
+    .menu-image-grid{grid-template-columns: 1fr;}
+    #menu{padding: 52px 6%;}
+}
+button.order{
+    padding:10px;
+    background:#f4a340;
+    color:#121212;
+    cursor:pointer;
+    border-radius: 20px;
+    border:none;
+    width: 50%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.main{
+    background-image: url( images/bg.jpeg);
+    background-color: #222831;
+    display: flex;
+    color:#fff;
+    padding:0 8%;
+    justify-content: flex-start;
+    min-height: 90vh;
+    flex-direction:column;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    image-rendering: -webkit-optimize-contrast;
+    background-attachment: fixed;
+
+}
+.main-text{
+    width: 50%;
+}
+.main h1{
+    font-family: "Edu NSW ACT Cursive", cursive;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.menu-section{
+    margin-top: 40px;
+    
+}
+.menu-section h2{
+    font-family: "Edu NSW ACT Cursive", cursive;
+    font-size: 20px;
+    text-align: center;
+}
+.food-lists {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding:0;
+    gap: 20px;
+}
+.food-lists li{
+    gap:20px;
+    list-style: none;
+
+}
+.food-lists a{
+    gap:20px;
+    text-decoration: none;
+    color:#222831;
+}
+.food-lists a:hover{
+    background-color: #a65d13;
+    border-radius: 10px;
+}
+.food-lists a.is-active {
+    background-color: #675849;
+    color: white;
+    border-radius: 10px;
+}
+@media (max-width: 760px){
+    .navbar{
+        padding: 12px 16px;
+    }
+    .navbar nav{
+        justify-content: flex-start;
+        gap: 16px;
+        width: max-content;
+        min-width: 100%;
+    }
+    .nav-links{
+        gap: 16px;
+        margin: 0;
+    }
+    .nav-actions{
+        gap: 8px;
+    }
+    .nav-icon{
+        width: 36px;
+    }
+}
+
+/* Shared dark theme, aligned with the home hero, and desktop layouts. */
+:root{--page-bg:#15191e;--surface:#20262d;--surface-raised:#282f37;--text:#f5f3ef;--muted:#c0c4c8;--accent:#f4a340;--line:#414952;}
+body{background:var(--page-bg);color:var(--text);}
+.navbar{overflow:visible;}
+.navbar nav{gap:clamp(14px,2.4vw,30px);}
+.nav-links{gap:clamp(12px,1.8vw,24px);}
+.nav-actions{gap:clamp(8px,1.3vw,16px);}
+.nav-toggle{display:none;}
+.nav-icon,.search-toggle{border:0;background:transparent;color:var(--text);cursor:pointer;}
+.nav-icon:hover,.nav-links a:hover{color:var(--accent);}
+
+.main{position:relative;display:flex;flex-direction:row;min-height:min(88vh,820px);align-items:center;justify-content:flex-start;padding:72px 8%;background-image:linear-gradient(90deg,rgba(13,17,23,.94),rgba(13,17,23,.68) 48%,rgba(13,17,23,.18)),url("images/bg.jpeg");background-position:center,right center;}
+.main-text{width:min(100%,560px);}
+.main h1{font-size:clamp(2.6rem,5vw,4.4rem);line-height:1.12;}
+.main p{color:#e3e3e3;line-height:1.7;}
+.testimonials{background:var(--page-bg);color:var(--text);}
+.testimonial-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+.testimonial-card,.menu-item-card{border:1px solid rgba(255,255,255,.06);background:var(--surface);color:var(--text);}
+.testimonial-card span,.price-tag{color:var(--accent);}
+.testimonial-card p,.menu-item-body p{color:var(--muted);}
+
+.menu-section{width:min(100%,1280px);margin:0 auto;padding:48px 6%;}
+.menu-section h2,.about-copy h1,.reservation-card h1{color:var(--text);font-family:"Edu NSW ACT Cursive",cursive;}
+.menu-section h2{margin-bottom:20px;font-size:clamp(2rem,4vw,2.7rem);}
+.food-lists{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:0;list-style:none;}
+.food-lists a{display:inline-block;padding:8px 14px;border:1px solid transparent;border-radius:20px;color:var(--muted);text-decoration:none;}
+.food-lists a:hover,.food-lists a.is-active{border-color:var(--accent);background:var(--accent);color:#121212;}
+.menu-image-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:24px;margin-top:28px;}
+.menu-item-card{display:flex;min-width:0;flex-direction:column;overflow:hidden;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform 180ms ease;}
+.menu-item-card:hover{transform:translateY(-4px);}
+.menu-item-card[hidden]{display:none;}
+.menu-item-card>img{display:block;width:100%;height:220px;object-fit:cover;}
+.menu-item-body{display:flex;flex:1;flex-direction:column;padding:18px;}
+.menu-item-body h3{margin-bottom:8px;}
+.menu-item-body p{line-height:1.6;}
+.menu-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:18px;}
+.cart-link{width:44px;height:44px;flex:0 0 44px;padding:0;border:0;border-radius:50%;cursor:pointer;}
+.search-results-label{text-align:center;color:var(--muted);}
+.search-results-label a{color:var(--accent);}
+.empty-menu{grid-column:1/-1;padding:32px;text-align:center;color:var(--muted);}
+
+#about{min-height:calc(100vh - 76px);padding:64px 6%;background:var(--page-bg);color:var(--text);}
+#about .container{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:center;gap:clamp(28px,5vw,64px);width:min(100%,1200px);margin:0 auto;}
+.about-copy h1,.reservation-card h1{margin-bottom:20px;font-size:clamp(2rem,4vw,3rem);}
+.about-copy p{margin:0 0 14px;color:var(--muted);line-height:1.75;}
+.about-image{display:block;width:100%;min-height:420px;max-height:620px;object-fit:cover;border-radius:16px;box-shadow:0 12px 32px rgba(0,0,0,.35);}
+
+.checkout-page,.reservation-page{min-height:calc(100vh - 76px);padding:56px 6%;background:var(--page-bg);color:var(--text);}
+.checkout-card,.reservation-card{width:min(100%,760px);margin:0 auto;padding:clamp(22px,5vw,40px);border:1px solid rgba(255,255,255,.07);border-radius:14px;background:var(--surface);box-shadow:0 8px 28px rgba(0,0,0,.28);}
+.checkout-card{max-width:620px;}
+.checkout-summary{margin:24px 0;padding:16px;border-radius:8px;background:var(--surface-raised);}
+.checkout-form{display:grid;gap:10px;}
+.checkout-form label,.reservation-field label{font-weight:600;}
+.checkout-form input,.reservation-input{width:100%;min-height:46px;padding:10px 12px;border:1px solid var(--line);border-radius:7px;outline-color:var(--accent);background:#171c21;color:var(--text);font:inherit;}
+.checkout-form input{margin-bottom:10px;padding:12px;}
+.checkout-form button{justify-self:start;border:0;cursor:pointer;}
+.checkout-errors{margin:18px 0;padding:14px 14px 14px 34px;border-radius:8px;background:#3b2424;color:#ff9b8f;}
+.order-confirmation-items{margin:20px 0;padding-left:20px;color:var(--muted);line-height:1.8;}
+.checkout-confirmation-total{margin-bottom:22px;}
+.reservation-intro{margin-bottom:24px;color:var(--muted);line-height:1.6;}
+.reservation-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+.reservation-field{display:grid;align-content:start;gap:7px;}
+.reservation-field.full-width{grid-column:1/-1;}
+textarea.reservation-input{min-height:110px;resize:vertical;}
+.reservation-field small{color:var(--muted);font-size:.8rem;}
+.field-error,.reservation-errors{color:#ff9b8f;font-size:.9rem;}
+.reservation-submit{margin-top:24px;border:0;cursor:pointer;}
+.reservation-confirmation dl{margin:24px 0;}
+.reservation-confirmation dl div{display:flex;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);}
+.reservation-confirmation dt{width:90px;color:var(--accent);font-weight:700;}
+.reservation-confirmation dd{margin:0;color:var(--muted);}
+.nav-search,.cart-panel{border:1px solid var(--line);background:var(--surface);color:var(--text);box-shadow:0 14px 38px rgba(0,0,0,.42);}
+.nav-search[hidden],.cart-panel[hidden]{display:none;}
+.nav-search input{background:var(--page-bg);color:var(--text);border:1px solid var(--line);}
+.nav-search label{color:var(--text);}
+.cart-close,.cart-remove{background:transparent;color:var(--text);}
+.cart-item{border-color:var(--line);}
+.cart-remove{color:var(--accent);}
+.cart-empty{color:var(--muted);}
+.nav-logout{display:inline-flex;align-items:center;}
+.nav-logout button,.nav-auth-link{
+    border:0;
+    background:transparent;
+    color:var(--text);
+    font:inherit;
+    text-decoration:none;
+    cursor:pointer;
+}
+.nav-logout button:hover,.nav-auth-link:hover{color:var(--accent);}
+.auth-page{min-height:calc(100vh - 76px);padding:56px 6%;background:var(--page-bg);color:var(--text);}
+.auth-card{width:min(100%,520px);margin:0 auto;padding:clamp(22px,5vw,40px);border:1px solid rgba(255,255,255,.07);border-radius:14px;background:var(--surface);box-shadow:0 8px 28px rgba(0,0,0,.28);}
+.auth-card h1{margin-bottom:8px;font-family:"Edu NSW ACT Cursive",cursive;font-size:clamp(2rem,4vw,2.7rem);}
+.auth-card>p{margin-bottom:22px;color:var(--muted);}
+.auth-form{display:grid;gap:10px;}
+.auth-form label{margin-top:8px;font-weight:600;}
+.auth-form input{width:100%;min-height:46px;padding:10px 12px;border:1px solid var(--line);border-radius:7px;background:#171c21;color:var(--text);font:inherit;}
+.auth-form input[type="hidden"]{display:none;}
+.auth-form small{color:var(--muted);font-size:.82rem;}
+.auth-form small ul{padding-left:20px;}
+.auth-form button{justify-self:start;margin-top:12px;cursor:pointer;}
+.auth-error{color:#ff9b8f;font-size:.9rem;}
+.auth-switch{margin-top:22px!important;margin-bottom:0!important;}
+.auth-switch a{color:var(--accent);}
+
+@media(max-width:1000px){.navbar nav{gap:14px;}.nav-links{gap:12px;}.nav-actions{gap:8px;}.testimonial-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:900px){
+    .navbar{padding:0 16px;}
+    .navbar nav{position:relative;flex-wrap:wrap;justify-content:space-between;gap:12px;width:100%;min-height:68px;}
+    .nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin-left:auto;border:0;background:transparent;color:var(--text);font-size:24px;cursor:pointer;}
+    .nav-links{display:none;order:3;flex:0 0 100%;flex-direction:column;align-items:stretch;gap:4px;margin:0;padding:8px 0 16px;}
+    .navbar nav.is-open .nav-links{display:flex;}
+    .nav-links a{justify-content:flex-start;width:100%;padding:8px 4px;}
+    .nav-actions{display:none;order:4;flex:0 0 100%;justify-content:flex-start;flex-wrap:wrap;padding-bottom:16px;}
+    .navbar nav.is-open .nav-actions{display:flex;}
+    .nav-search,.cart-panel{right:16px;}
+    #about .container{grid-template-columns:1fr;}
+    .about-image{min-height:320px;max-height:500px;}
+    .main{flex-direction:row;min-height:76vh;padding:64px 7%;background-image:linear-gradient(90deg,rgba(13,17,23,.94),rgba(13,17,23,.62)),url("images/bg.jpeg");background-position:center;}
+    .main-text{width:100%;}
+}
+@media(max-width:560px){
+    .testimonials{padding:48px 6%;}
+    .testimonial-grid,.reservation-fields{grid-template-columns:1fr;}
+    .menu-section{padding:40px 6%;}
+    .menu-image-grid{grid-template-columns:1fr;}
+    .food-lists{gap:5px;}
+    .food-lists a{padding:7px 10px;font-size:.9rem;}
+    #about{padding:48px 6%;}
+    .about-image{min-height:240px;}
+    .checkout-page,.reservation-page{padding:36px 5%;}
+    .reservation-field.full-width{grid-column:auto;}
+    .main{min-height:70vh;}
+}
+

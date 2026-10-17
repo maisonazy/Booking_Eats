@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Reservation received | Festove Eats{% endblock %}
+
+{% block content %}
+<section class="reservation-page">
+    <div class="reservation-card reservation-confirmation">
+        <h1>Reservation request received</h1>
+        <p>Thanks, {{ reservation.customer_name }}. We will contact you to confirm your table.</p>
+        <dl>
+            <div><dt>Date</dt><dd>{{ reservation.reservation_date|date:"l, j F Y" }}</dd></div>
+            <div><dt>Time</dt><dd>{{ reservation.reservation_time|time:"g:i A" }}</dd></div>
+            <div><dt>Guests</dt><dd>{{ reservation.party_size }}</dd></div>
+            <div><dt>Status</dt><dd>{{ reservation.get_status_display }}</dd></div>
+        </dl>
+        {% if reservation.special_requests %}<p><strong>Request:</strong> {{ reservation.special_requests }}</p>{% endif %}
+        <a class="btn" href="{% url 'home' %}">Back to home</a>
+    </div>
+</section>
+{% endblock %}

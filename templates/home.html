@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Festove Eats | Home{% endblock %}
+
+{% block content %}
+<section class="main">
+    <div class="main-text">
+        <h1>Fast food, made with care</h1>
+        <p>Enjoy fresh, delicious eats made for sharing.</p>
+        <p>Welcome to Festove Eats. Find your new favorite meal.</p>
+        <a class="btn" href="{% url 'menu' %}">Explore our menu</a>
+    </div>
+</section>
+<section class="testimonials" aria-labelledby="testimonials-title">
+    <h2 id="testimonials-title">What our customers say</h2>
+    <div class="testimonial-grid">
+        <article class="testimonial-card"><h3>Maison Frank</h3><span>Customer</span><p>Festove is the best in fries and burgers.</p></article>
+        <article class="testimonial-card"><h3>Mech Yuri</h3><span>Customer</span><p>A great place to enjoy delicious meals in the city.</p></article>
+        <article class="testimonial-card"><h3>Mike Clinton</h3><span>Customer</span><p>They offer and deliver the eats on time.</p></article>
+        <article class="testimonial-card"><h3>Jay Ness</h3><span>Customer</span><p>Festove is amazing. I rate it 9.8.</p></article>
+    </div>
+</section>
+
+
+
+
+        
+
+
+
+
+
+{% endblock %}

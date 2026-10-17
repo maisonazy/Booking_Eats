@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Menu | Festove Eats{% endblock %}
+
+{% block content %}
+<section id="menu" class="menu-section">
+    <div class="menu-details">
+        <h2>Our Menu</h2>
+        {% if query %}
+        <p class="search-results-label">Search results for “{{ query }}” <a href="{% url 'menu' %}">Clear search</a></p>
+        {% endif %}
+        <nav class="food-nav" aria-label="Menu categories">
+            <ul class="food-lists">
+                <li><a href="#" data-filter="all" class="is-active">All</a></li>
+                {% for category_value, category_label in categories %}
+                <li><a href="#" data-filter="{{ category_value }}">{{ category_label }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+
+        <div class="menu-image-grid">
+            {% for item in menu_items %}
+            <article class="menu-item-card" data-category="{{ item.category }}">
+                <img src="{% static item.image_path %}" alt="{{ item.name }}">
+                <div class="menu-item-body">
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.description }}</p>
+                    <div class="menu-meta">
+                        <span class="price-tag">Ksh {{ item.price|floatformat:0 }}</span>
+                        <button type="button" class="btn btn-primary cart-link" data-product-id="{{ item.slug }}" data-product-price="{{ item.price }}" aria-label="Add {{ item.name }} to cart" title="Add to cart">
+                            <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+            {% empty %}
+            {% if query %}
+            <p class="empty-menu">No menu items match “{{ query }}”. Try another search.</p>
+            {% else %}
+            <p class="empty-menu">There are no menu items available yet.</p>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

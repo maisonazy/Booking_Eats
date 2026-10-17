@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Order received | Festove Eats{% endblock %}
+
+{% block content %}
+<section class="checkout-page" data-order-success>
+    <div class="checkout-card">
+        <h1>Thank you, {{ order.customer_name }}!</h1>
+        <p>Your order <strong>#{{ order.pk }}</strong> has been received.</p>
+        <ul class="order-confirmation-items">
+            {% for item in order.items.all %}
+            <li>{{ item.product_name }} * {{ item.quantity }} — Ksh {{ item.unit_price|floatformat:0 }}</li>
+            {% endfor %}
+        </ul>
+        <p class="checkout-confirmation-total">Total: <strong>Ksh {{ order.total|floatformat:0 }}</strong></p>
+        <a class="btn" href="{% url 'menu' %}">Back to menu</a>
+    </div>
+</section>
+{% endblock %}
