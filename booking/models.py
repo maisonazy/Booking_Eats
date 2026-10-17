@@ -15,7 +15,8 @@ class MenuItem(models.Model):
     description = models.TextField()
     category = models.CharField(max_length=20, choices=CATEGORIES)
     price = models.DecimalField(max_digits=8, decimal_places=2)
-    image_path = models.CharField(max_length=255, help_text="Path under static/, for example images/bg1.jpeg")
+    image_path = models.CharField(max_length=255, blank=True, help_text="Fallback path under static/, for example images/bg1.jpeg")
+    uploaded_image = models.FileField(upload_to="menu/", blank=True, help_text="Optional uploaded image; takes priority over the static image path.")
     is_available = models.BooleanField(default=True)
 
     class Meta:

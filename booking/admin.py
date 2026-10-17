@@ -8,6 +8,13 @@ class MenuItemAdmin(admin.ModelAdmin):
     list_filter = ("category", "is_available")
     search_fields = ("name", "description")
     prepopulated_fields = {"slug": ("name",)}
+    readonly_fields = ("image_preview",)
+
+    @admin.display(description="Current image")
+    def image_preview(self, obj):
+        if obj and obj.uploaded_image:
+            return obj.uploaded_image.name
+        return obj.image_path if obj else "Save the item to see its image."
 
 class OrderItemInline(admin.TabularInline):
     model = OrderItem
